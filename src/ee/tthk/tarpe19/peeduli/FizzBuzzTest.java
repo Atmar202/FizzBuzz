@@ -21,7 +21,7 @@ public class FizzBuzzTest {
 	@Test
 	public void shouldReturnOneHundredNumbers() {
 		FizzBuzz fb = new FizzBuzz();
-		assertEquals(100, fb.getNumbers());
+		assertEquals(100, fb.getNumbers().length);
 	}
 
 }
