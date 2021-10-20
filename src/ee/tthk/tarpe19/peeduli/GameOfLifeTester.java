@@ -23,5 +23,11 @@ public class GameOfLifeTester {
 		Cell c = tester.createCell(CellState.LIVING);
 		assertEquals(CellState.LIVING, c.getState());
 	}
+	
+	@Test
+	public void createDeadCell() {
+		Cell c = tester.createCell(CellState.DEAD);
+		assertEquals(CellState.DEAD, c.getState());
+	}
 
 }
