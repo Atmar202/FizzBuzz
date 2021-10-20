@@ -1,8 +1,8 @@
 package ee.tthk.tarpe19.peeduli;
 
-public class GameOfLife {
+public class Cell {
 
-	public Cell createCell(CellState state) {
+	public CellState getState() {
 		// TODO Auto-generated method stub
 		return null;
 	}
