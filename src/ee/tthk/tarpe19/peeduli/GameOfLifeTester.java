@@ -29,5 +29,17 @@ public class GameOfLifeTester {
 		Cell c = tester.createCell(CellState.DEAD);
 		assertEquals(CellState.DEAD, c.getState());
 	}
+	
+	@Test
+	public void createRandomCell() {
+		boolean living = false;
+		boolean dead = false;
+		for(int i = 0; i < 10; i++) {
+			Cell actual = tester.createCell();
+			if(actual.getState()==CellState.LIVING) living = true;
+			if(actual.getState()==CellState.DEAD) dead = true;
+		}
+		assertTrue(living && dead);
+	}
 
 }
