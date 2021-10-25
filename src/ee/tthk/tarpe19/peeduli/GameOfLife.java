@@ -3,15 +3,17 @@ package ee.tthk.tarpe19.peeduli;
 import java.util.Random;
 
 public class GameOfLife  {
+	
+	Cell actual = new Cell();
 
 	public Cell createCell(CellState state) {
-		Cell actual = new Cell();
 		actual.state(state);
 		return actual;
 	}
 
 	public Cell createCell() {
-		return CellState.values()[new Random().nextInt(CellState.values().length)];
+		actual.state(CellState.values()[new Random().nextInt(CellState.values().length)]);
+		return actual;
 	}
 
 }
