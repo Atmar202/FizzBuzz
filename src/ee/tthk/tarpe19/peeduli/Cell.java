@@ -3,14 +3,9 @@ package ee.tthk.tarpe19.peeduli;
 public class Cell {
 	
 	private CellState state;
-	private int num;
 	
 	public void state(CellState state) {
 		this.state = state;
-	}
-	
-	public void addNeighbours(int num) {
-		this.num = num;
 	}
 
 	public CellState getState() {
@@ -19,7 +14,7 @@ public class Cell {
 	}
 	
 	public int getNeighbours() {
-		return num;
+		return 0;
 	}
 
 }
