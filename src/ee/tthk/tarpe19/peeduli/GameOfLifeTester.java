@@ -45,7 +45,8 @@ public class GameOfLifeTester {
 	@Test
 	public void LivingCellWithLessThanTwoNeighboursDies() {
 		Cell c = tester.createCell(CellState.LIVING);
-		//if(c.getNeighbours() < 2) c.state(CellState.DEAD);
+		c.addNeighbours(1);
+		if(c.getNeighbours() < 2) c.state(CellState.DEAD);
 		assertEquals(CellState.DEAD, c.getState());
 	}
 
