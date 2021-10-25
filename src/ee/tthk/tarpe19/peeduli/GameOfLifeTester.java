@@ -57,4 +57,11 @@ public class GameOfLifeTester {
 		if(c.getNeighbours() == 3 || c.getNeighbours() == 2) c.state(CellState.LIVING);
 		assertEquals(CellState.LIVING, c.getState());
 	}
+	
+	@Test
+	public void LivingCellWithMoreThanThreeNeighboursDies() {
+		Cell c = tester.createCell(CellState.LIVING);
+		if(c.getNeighbours() > 3) c.state(CellState.DEAD);
+		assertEquals(CellState.DEAD, c.getState());
+	}
 }
