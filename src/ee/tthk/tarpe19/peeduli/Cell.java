@@ -12,5 +12,6 @@ public class Cell {
 		// TODO Auto-generated method stub
 		return state;
 	}
+	
 
 }
