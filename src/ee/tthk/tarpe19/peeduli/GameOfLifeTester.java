@@ -61,6 +61,7 @@ public class GameOfLifeTester {
 	@Test
 	public void LivingCellWithMoreThanThreeNeighboursDies() {
 		Cell c = tester.createCell(CellState.LIVING);
+		c.addNeighbours(4);
 		if(c.getNeighbours() > 3) c.state(CellState.DEAD);
 		assertEquals(CellState.DEAD, c.getState());
 	}
