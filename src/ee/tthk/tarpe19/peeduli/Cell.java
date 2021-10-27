@@ -5,7 +5,7 @@ public class Cell {
 	private CellState state;
 	private int num;
 	
-	public void state(CellState state) {
+	public void setState(CellState state) {
 		this.state = state;
 	}
 	

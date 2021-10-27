@@ -46,7 +46,7 @@ public class GameOfLifeTester {
 	public void LivingCellWithLessThanTwoNeighboursDies() {
 		Cell c = tester.createCell(CellState.LIVING);
 		c.addNeighbours(1);
-		if(c.getNeighbours() < 2) c.state(CellState.DEAD);
+		if(c.getNeighbours() < 2) c.setState(CellState.DEAD);
 		assertEquals(CellState.DEAD, c.getState());
 	}
 	
@@ -54,7 +54,7 @@ public class GameOfLifeTester {
 	public void LivingCellWithTwoOrThreeNeighbours() {
 		Cell c = tester.createCell(CellState.DEAD);
 		c.addNeighbours(2);
-		if(c.getNeighbours() == 3 || c.getNeighbours() == 2) c.state(CellState.LIVING);
+		if(c.getNeighbours() == 3 || c.getNeighbours() == 2) c.setState(CellState.LIVING);
 		assertEquals(CellState.LIVING, c.getState());
 	}
 	
@@ -62,7 +62,7 @@ public class GameOfLifeTester {
 	public void LivingCellWithMoreThanThreeNeighboursDies() {
 		Cell c = tester.createCell(CellState.LIVING);
 		c.addNeighbours(4);
-		if(c.getNeighbours() > 3) c.state(CellState.DEAD);
+		if(c.getNeighbours() > 3) c.setState(CellState.DEAD);
 		assertEquals(CellState.DEAD, c.getState());
 	}
 	
@@ -70,7 +70,7 @@ public class GameOfLifeTester {
 	public void DeadCellWithThreeNeighboursBecomesAlive() {
 		Cell c = tester.createCell(CellState.DEAD);
 		c.addNeighbours(3);
-		if(c.getNeighbours() == 3 && c.getState() == CellState.DEAD) c.state(CellState.LIVING);
+		if(c.getNeighbours() == 3 && c.getState() == CellState.DEAD) c.setState(CellState.LIVING);
 		assertEquals(CellState.LIVING, c.getState());
 	}
 }
