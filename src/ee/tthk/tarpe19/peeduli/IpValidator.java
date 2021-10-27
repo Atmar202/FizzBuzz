@@ -5,10 +5,14 @@ import java.util.Arrays;
 public class IpValidator {
 
 	public boolean validateIPv4Address(String ipString) {
-		if(hasThreeDots(ipString)) {
+		if(hasThreeDots(ipString) && hasFourNumbers(ipString)) {
 			return true;
 		}
 		return false;
+	}
+
+	private boolean hasFourNumbers(String ipString) {
+		return getNumbers(ipString).length == 4;
 	}
 
 	private boolean hasThreeDots(String ipString) {
