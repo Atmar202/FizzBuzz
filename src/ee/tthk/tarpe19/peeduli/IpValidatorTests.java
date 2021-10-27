@@ -19,5 +19,11 @@ public class IpValidatorTests {
 		IpValidator validator = new IpValidator();
 		assertFalse(validator.validateIPv4Address(""));
 	}
+	
+	@Test
+	public void ShouldBe_True_GivenStringWithThreeDots() {
+		IpValidator validator = new IpValidator();
+		assertTrue(validator.validateIPv4Address("1.2.3.1"));
+	}
 
 }
