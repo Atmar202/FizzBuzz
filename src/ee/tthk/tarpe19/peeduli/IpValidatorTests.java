@@ -32,5 +32,11 @@ public class IpValidatorTests {
 		int[] expected = {1,2,3,4};
 		assertArrayEquals(expected, validator.getNumbers("1.2.3.4"));
 	}
+	
+	@Test
+	public void ShouldBe_False_GivenStringWithThreeNumbersAndDots() {
+		IpValidator validator = new IpValidator();
+		assertFalse(validator.validateIPv4Address("1.2.3."));
+	}
 
 }
