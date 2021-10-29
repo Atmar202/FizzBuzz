@@ -38,5 +38,17 @@ public class IpValidatorTests {
 		IpValidator validator = new IpValidator();
 		assertFalse(validator.validateIPv4Address("1.2.3."));
 	}
+	
+	@Test
+	public void ShouldBe_False_GivenNumbersEndingWith0() {
+		IpValidator validator = new IpValidator();
+		assertFalse(validator.validateIPv4Address("1.2.3.0"));
+	}
+	
+	@Test
+	public void ShouldBe_False_GivenNumbersEndingWith255() {
+		IpValidator validator = new IpValidator();
+		assertFalse(validator.validateIPv4Address("1.2.3.255"));
+	}
 
 }
