@@ -8,9 +8,11 @@ import org.junit.Test;
 
 public class FizzBuzzTest {
 	
+	FizzBuzz fb;
+	
 	@Before
 	public void setUp() throws Exception {
-		
+		fb = new FizzBuzz();
 	}
 	
 	@After
@@ -20,8 +22,12 @@ public class FizzBuzzTest {
 
 	@Test
 	public void shouldReturnOneHundredNumbers() {
-		FizzBuzz fb = new FizzBuzz();
 		assertEquals(100, fb.getNumbers().length);
+	}
+	
+	@Test
+	public void PrintFizzOnThreeMultiples() {
+		assertEquals(100, fb.getNumbers());
 	}
 
 }
