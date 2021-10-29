@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class IpValidator {
 
 	public boolean validateIPv4Address(String ipString) {
-		if(hasThreeDots(ipString) && hasFourNumbers(ipString)) {
+		if(hasThreeDots(ipString) && hasFourNumbers(ipString) && !(lastNumber(ipString) == 255 || lastNumber(ipString) == 0)) {
 			return true;
 		}
 		return false;
@@ -24,6 +24,10 @@ public class IpValidator {
 				.stream(string.split("\\."))
 				.mapToInt(Integer::parseInt)
 				.toArray();
+	}
+	
+	private int lastNumber(String ipString) {
+		return getNumbers(ipString)[getNumbers(ipString).length-1];
 	}
 
 }
