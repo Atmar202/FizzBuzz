@@ -58,7 +58,8 @@ public class IpValidatorTests {
 	
 	@Test
 	public void ShouldBe_False_GivenIPStartingWith0() {
-		assertFalse(validator.validateIPv4Address("0.2.3.255"));
+		assertFalse(validator.validateIPv4Address("0.2.3.254"));
 	}
+	
 
 }
