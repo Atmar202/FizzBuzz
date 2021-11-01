@@ -55,6 +55,10 @@ public class IpValidatorTests {
 		assertFalse(validator.validateIPv4Address("1.256.3.4"));
 		assertFalse(validator.validateIPv4Address("312.2.3.4"));
 	}
-
+	
+	@Test
+	public void ShouldBe_False_GivenIPStartingWith0() {
+		assertFalse(validator.validateIPv4Address("0.2.3.255"));
+	}
 
 }
