@@ -7,8 +7,8 @@ public class IpValidator {
 	public boolean validateIPv4Address(String ipString) {
 		if(hasThreeDots(ipString) && hasFourNumbers(ipString) && 
 				numbersInRange0_255(ipString) && 
-				!(lastNumber(ipString) == 255 || lastNumber(ipString) == 0
-				|| firstNumber(ipString) == 0 || firstNumber(ipString) == 255)) {
+				numberInRange(firstNumber(ipString), 1, 254) &&
+				numberInRange(lastNumber(ipString), 1, 254)) {
 			return true;
 		}
 		return false;
@@ -17,6 +17,10 @@ public class IpValidator {
 	private boolean numbersInRange0_255(String ipString) {
 		return Arrays.stream(getNumbers(ipString))
 				.allMatch(nr-> nr>=0&&nr<=255);
+	}
+	
+	private boolean numberInRange(int number, int min, int max) {
+		return number >= min && number <= max;
 	}
 
 	private boolean hasFourNumbers(String ipString) {
