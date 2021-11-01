@@ -5,10 +5,15 @@ import java.util.Arrays;
 public class IpValidator {
 
 	public boolean validateIPv4Address(String ipString) {
-		if(hasThreeDots(ipString) && hasFourNumbers(ipString) && !(lastNumber(ipString) == 255 || lastNumber(ipString) == 0)) {
+		if(hasThreeDots(ipString) && hasFourNumbers(ipString) && numbersInRange0_255(ipString) && !(lastNumber(ipString) == 255 || lastNumber(ipString) == 0)) {
 			return true;
 		}
 		return false;
+	}
+
+	private boolean numbersInRange0_255(String ipString) {
+		return Arrays.stream(getNumbers(ipString))
+				.allMatch(nr-> nr>=0&&nr<=255);
 	}
 
 	private boolean hasFourNumbers(String ipString) {
