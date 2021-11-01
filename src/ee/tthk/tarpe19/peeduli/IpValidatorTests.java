@@ -65,5 +65,6 @@ public class IpValidatorTests {
 	public void ShouldBe_False_GivenIPStartingWith255() {
 		assertFalse(validator.validateIPv4Address("255.1.2.3"));
 	}
+	
 
 }
