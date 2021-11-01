@@ -47,6 +47,14 @@ public class IpValidatorTests {
 	public void ShouldBe_False_GivenNumbersEndingWith255() {
 		assertFalse(validator.validateIPv4Address("1.2.3.255"));
 	}
+	
+	@Test
+	public void ShouldBe_False_GivenStringWithFourNumbersNotInRange0_255(){
+		assertFalse(validator.validateIPv4Address("1.2.3.257"));
+		assertFalse(validator.validateIPv4Address("1.2.300.4"));
+		assertFalse(validator.validateIPv4Address("1.256.3.4"));
+		assertFalse(validator.validateIPv4Address("312.2.3.4"));
+	}
 
 
 }
