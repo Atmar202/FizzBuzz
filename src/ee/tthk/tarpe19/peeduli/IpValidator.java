@@ -8,7 +8,7 @@ public class IpValidator {
 		if(hasThreeDots(ipString) && hasFourNumbers(ipString) && 
 				numbersInRange0_255(ipString) && 
 				!(lastNumber(ipString) == 255 || lastNumber(ipString) == 0
-				|| firstNumber(ipString) == 0)) {
+				|| firstNumber(ipString) == 0 || firstNumber(ipString) == 255)) {
 			return true;
 		}
 		return false;
